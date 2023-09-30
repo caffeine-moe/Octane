@@ -1,14 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    `maven-publish`
     kotlin("jvm") version "1.7.21"
     kotlin("plugin.serialization") version "1.7.21"
     id("se.patrikerdes.use-latest-versions") version "0.2.18"
     id("com.github.ben-manes.versions") version "0.42.0"
 }
 
-group = "org.caffeine"
-version = "1.0-SNAPSHOT"
+group = "com.github.caffeine-moe"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
