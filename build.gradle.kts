@@ -17,6 +17,19 @@ repositories {
     mavenCentral()
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.caffeine-moe"
+            artifactId = "octane"
+            version = "1.0.0"
+            from(components["java"])
+        }
+    }
+}
+
+
+
 dependencies {
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
