@@ -33,8 +33,7 @@ data class BotClientUserImpl(
 
     override var asMention : String = "<@${id}>"
 
-    private suspend fun sendMessageWithAttachments(
-        channel : TextCapableChannel,
+    private fun sendMessageWithAttachments(
         message : MessageSendData,
     ) : List<PartData> {
         client as ClientImpl
@@ -69,7 +68,7 @@ data class BotClientUserImpl(
             val data = json.encodeToString(message)
             client.httpClient.post("$BASE_URL/channels/${channel.id}/messages", data).await()
         } else {
-            val data = sendMessageWithAttachments(channel, message)
+            val data = sendMessageWithAttachments(message)
             client.httpClient.client.submitFormWithBinaryData("$BASE_URL/channels/${channel.id}/messages", data)
                 .bodyAsText()
         }

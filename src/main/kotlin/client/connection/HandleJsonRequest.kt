@@ -1,7 +1,5 @@
 package client.connection
 
-import client.connection.OPCODE
-import client.connection.handlers.channelMod
 import client.ClientImpl
 import client.connection.handlers.*
 import client.connection.payloads.gateway.BasePayload
@@ -32,7 +30,7 @@ suspend fun handleJsonRequest(payload : String, client : ClientImpl) {
 
                 GatewayEvent.GUILD_UPDATE.value -> guildUpdate(data, client)
 
-                GatewayEvent.GUILD_MEMBER_LIST_UPDATE.value -> guildMemberListUpdate(data, client)
+                //GatewayEvent.GUILD_MEMBER_LIST_UPDATE.value -> guildMemberListUpdate(data, client)
 
             }
         }

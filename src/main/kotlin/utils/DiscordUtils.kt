@@ -21,6 +21,8 @@ import client.connection.payloads.client.user.identify.Identify
 import client.connection.payloads.client.user.identify.IdentifyD
 import client.connection.payloads.client.user.identify.IdentifyDClientState
 import client.connection.payloads.client.user.identify.IdentifyDPresence
+import client.connection.payloads.client.bot.identify.Identify as BotIdentify
+import client.connection.payloads.client.bot.identify.IdentifyD as BotIdentifyD
 import client.connection.payloads.gateway.*
 import client.connection.payloads.gateway.ready.Ready
 import client.connection.payloads.gateway.ready.ReadyDCustomStatus
@@ -595,10 +597,10 @@ class DiscordUtils(val client : ClientImpl) {
     )
 
 
-    private fun generateBotIdentify() : client.connection.payloads.client.bot.identify.Identify =
-        client.connection.payloads.client.bot.identify.Identify(
+    private fun generateBotIdentify() : BotIdentify =
+        BotIdentify(
             OPCODE.IDENTIFY.value,
-            client.connection.payloads.client.bot.identify.IdentifyD(
+            BotIdentifyD(
                 client.configuration.token,
                 513,
                 IdentifyDProperties(
