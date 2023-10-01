@@ -84,7 +84,7 @@ class Connection(private val client : ClientImpl) {
     private suspend fun connect(payload : DiscordUtils.PayloadDef) {
         fetchWebClientValues(client)
         client.utils.createSuperProperties()
-        if (client.type != ClientType.BOT) client.utils.tokenValidator(client.configuration.token)
+        //if (client.type != ClientType.BOT) client.utils.tokenValidator(client.configuration.token)
 
         inflater = Inflater()
 

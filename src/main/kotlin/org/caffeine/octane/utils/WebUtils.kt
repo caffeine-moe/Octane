@@ -48,7 +48,7 @@ suspend fun fetchWebClientValues(client : Client) {
         clientVersion = dua.chrome_version
         clientBuildNumber = dua.client_build_number
         userAgent = dua.chrome_user_agent
-    } catch (e : ResponseException) {
+    } catch (e : Exception) {
         log(
             "Unable to fetch client values, falling back to default values.",
             "API:",

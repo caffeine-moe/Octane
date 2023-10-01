@@ -21,7 +21,7 @@ import org.caffeine.octane.utils.clientVersion
 import org.caffeine.octane.utils.log
 import org.caffeine.octane.utils.userAgent
 
-class HTTPClient(val clientImpl : ClientImpl) {
+class HTTPClient(private val clientImpl : ClientImpl) {
 
     private val defaultHeaders : Headers = if (clientImpl.configuration.clientType != ClientType.BOT) {
         buildHeaders {
